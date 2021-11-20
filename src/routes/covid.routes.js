@@ -4,19 +4,19 @@ module.exports = app => {
     var router = require("express").Router();
   
     //filter covid register by age
-    router.get("/age",Covids.agefilter);
+    router.post("/age",Covids.agefilter);
 
     // Create a new Covidregister
     router.post("/", Covids.create);
 
     //filter covid register by age
-    router.get("/gender",Covids.genderfilter);
+    router.post("/gender",Covids.genderfilter);
 
     //filter covid register by age
-    router.get("/state",Covids.statefilter);
+    router.post("/state",Covids.statefilter);
 
     //filter covid register by age
-    router.get("/city",Covids.cityfilter);
+    router.post("/city",Covids.cityfilter);
     
     // Update a Tutorial with id
     router.put("/:id", Covids.update);

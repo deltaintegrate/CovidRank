@@ -46,8 +46,8 @@ exports.genderfilter = (req, res) => {
     }
 
     const covidgender = req.body.gender;
-
-    Coviduser.findAll({where : covidgender})
+    console.log(covidgender)
+    Coviduser.findAll({where : {gender: covidgender}})
     .then(data => {
         res.send(data);
     })
@@ -71,7 +71,7 @@ exports.agefilter = (req, res) => {
     }
 
     const covidgender = req.body.age;
-
+    console.log(covidgender >= 20 && covidgender <= 40)
     if (covidgender < 0){
         res.status(400).send({
             message: "Bad request"
@@ -80,7 +80,7 @@ exports.agefilter = (req, res) => {
     }
 
     if (covidgender >= 0 && covidgender <= 20){
-        Coviduser.findAll({[Op.between]:[0,20]})
+        Coviduser.findAll({where : {age :  {[Op.between]:[0,20]}}})
         .then(data =>{
             res.send(data);
         })
@@ -92,7 +92,7 @@ exports.agefilter = (req, res) => {
     }
 
     if (covidgender >= 20 && covidgender <= 40){
-        Coviduser.findAll({[Op.between]:[20,40]})
+        Coviduser.findAll({where : {age :  {[Op.between]:[20,40]}}})
         .then(data =>{
             res.send(data);
         })
@@ -104,7 +104,7 @@ exports.agefilter = (req, res) => {
     }
 
     if (covidgender > 40){
-        Coviduser.findAll({[Op.gt]:40})
+        Coviduser.findAll({where : {age :  {[Op.gt]:40}}})
         .then(data =>{
             res.send(data);
         })
@@ -131,8 +131,8 @@ exports.statefilter = (req, res) => {
     }
 
     const covidgender = req.body.state;
-
-    Coviduser.findAll({where : state})
+    console.log(covidgender)
+    Coviduser.findAll({where : {state : covidgender}})
     .then(data => {
         res.send(data);
     })
@@ -157,7 +157,7 @@ exports.cityfilter = (req, res) => {
 
     const covidgender = req.body.city;
 
-    Coviduser.findAll({where : city})
+    Coviduser.findAll({where : {city : covidgender}})
     .then(data => {
         res.send(data);
     })

@@ -41,21 +41,16 @@ setInterval(()=>{
                 dbcoviddata.gender = database[i].sexo,
                 dbcoviddata.state = database[i].departamento_nom,
                 dbcoviddata.city = database[i].ciudad_municipio_nom
+
+                const user = Coviduser.create(dbcoviddata);
+                console.log(user);
             }
     })
 
-    
 
-},6000)
-
+},600000000)
 
 
-
-async function resolve() {
-    console.log("calling");
-    const result = await resolvedata();
-    console.log(result);
-}
 
 
 
