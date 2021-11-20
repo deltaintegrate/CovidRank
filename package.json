@@ -1,0 +1,34 @@
+{
+  "name": "covidrank",
+  "version": "1.0.0",
+  "description": "CovidRank enviroment on nodejs + vuejs +sequelize",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deltaintegrate/CovidRank.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "sequelize",
+    "mysql",
+    "rest",
+    "api"
+  ],
+  "author": "Leonardo Castrillon Giraldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deltaintegrate/CovidRank/issues"
+  },
+  "homepage": "https://github.com/deltaintegrate/CovidRank#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.0-alpha.1"
+  }
+}
